@@ -10,7 +10,7 @@
 <body>
     <!-- instanza Vue -->
     <div id="app">
-        <ul>
+        <ul v-if="mailList.length === eleNum">
             <li v-for="mail,i in mailList" :key="i">
                 {{ mail }}
             </li>

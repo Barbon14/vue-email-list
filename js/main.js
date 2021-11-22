@@ -12,17 +12,24 @@ var app = new Vue({
 
         // array di stringhe (indirizzi mail generati dal API)
         mailList : [],
+
+        // lunghezza array desiderata
+        eleNum : 10,
     },
 
     mounted() {
         const self = this;
-        for (let i = 0; i < 10; i++) {
+
+        for (let i = 0; i < self.eleNum; i++) {
+
+            // riachiamo API
             axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then( function (element) {
                 let mail = element.data.response;
+
+                // aggiungo la mail generata all'array
                 self.mailList.push(mail);
-                console.log(self.mailList);
             })
         } 
     }
