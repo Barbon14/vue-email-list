@@ -11,8 +11,8 @@
     <!-- instanza Vue -->
     <div id="app">
         <ul>
-            <li>
-
+            <li v-for="mail,i in mailList" :key="i">
+                {{ mail }}
             </li>
         </ul>
     </div>
